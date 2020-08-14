@@ -9,7 +9,7 @@ export class PokeService {
     }
 
     public getAllPokemon(req: Request, res: Response) {
-        Pokemon.find({}, (error: Error, pokemon: MongooseDocument) => {
+        Pokemon.find({}, async (error: Error, pokemon: MongooseDocument) => {
             if(error) {
                 res.send(error);
             }
@@ -19,10 +19,12 @@ export class PokeService {
 
     public addNewPokemon(req: Request, res: Response) {
         const newPokemon = new Pokemon(req.body);
-        newPokemon.save((error: Error, pokemon: MongooseDocument) => {
+        newPokemon.save(async (error: Error, pokemon: MongooseDocument) => {
             if (error) {
                 res.send(error);
             }
+            await pokemon.populate('type').execPopulate();
+            await pokemon.populate('subtype').execPopulate();
             res.json(pokemon);
         })
     }
