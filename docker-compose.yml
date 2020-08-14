@@ -11,4 +11,6 @@ services:
       - MONGO_INITDB_DATABASE= Pokemon
     ports:
       - 27017:27017
+volumes:
+  pokeData:
     
