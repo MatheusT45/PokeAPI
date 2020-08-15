@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { MongooseDocument } from 'mongoose';
-import { PokeType } from "../models/poketype.model";
+import { PokeType } from "../models/poketype";
 
 export class PokeTypeService {
 

@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
-import { Controller } from './controllers/main.controller';
-import { MONGO_URL } from './constants/pokeApi.constants';
+import { Controller } from './controllers/main';
+import { MONGO_URL } from './constants/pokeApi';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';

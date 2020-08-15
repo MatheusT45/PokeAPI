@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { MongooseDocument } from 'mongoose';
-import { Pokemon } from "../models/pokemon.model";
-import { WELCOME_MESSAGE } from '../constants/pokeApi.constants';
+import { Pokemon } from "../models/pokemon";
+import { WELCOME_MESSAGE } from '../constants/pokeApi';
 
 export class PokeService {
     public welcomeMessage(req: Request, res: Response) {
