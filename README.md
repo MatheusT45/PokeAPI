@@ -61,6 +61,6 @@ docker-compose up
 | Name  | `String`  | The pokemon type name |
 | Color  | `String`  | The pokemon type color in hexadecimal |
 
-# TODOs
+### TODOs
 - Chance to be shiny
 - Effective and weak type
