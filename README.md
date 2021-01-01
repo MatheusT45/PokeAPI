@@ -16,3 +16,7 @@ Running mongoDB:
 ```
 docker-compose up
 ```
+
+TODO:
+- Add description to pokemons
+- Change the gender variable to be a boolean if a pokemon has genders or not
