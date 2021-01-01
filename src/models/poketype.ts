@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const PokeTypeSchema = new mongoose.Schema({
-    name: String,
+    name: { type: String, required: true , unique: true },
     color: String,
 });
 

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const PokemonSchema = new mongoose.Schema({
-    number:{ type: Number, required: true , unique: true },
+    number: { type: Number, required: true , unique: true },
     name: { type: String, required: true },
     hasGender: { type: Boolean, default: true },
     description: String,
