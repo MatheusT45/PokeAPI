@@ -60,3 +60,8 @@ docker-compose up
 | id  | `String`  | Default id created by mongo |
 | Name  | `String`  | The pokemon type name |
 | Color  | `String`  | The pokemon type color in hexadecimal |
+
+### TODOs
+- Sprite default URL
+- Chance to be shiny
+- Effective and weak type
