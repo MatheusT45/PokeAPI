@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "d4f76cf6-65bb-4902-8ec6-694e5fbab800",
+		"name": "PokeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pokemon",
+			"item": [
+				{
+					"name": "pokemons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/pokemons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokemons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pokemon/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/pokemon/5fef5e7925e82938ec0d4200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokemon",
+								"5fef5e7925e82938ec0d4200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pokemon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 2,\n    \"name\": \"ivysaur\",\n    \"description\": \"When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.\",\n    \"type\": [\"5fef5bad50fb2312385f110d\", \"5fef5c4e50fb2312385f110f\"],\n    \"hasGender\": true,\n    \"height\": 0.8,\n    \"weight\": 12,\n    \"sprite\": \"https://raw.githubusercontent.com/MatheusT45/PokeAPI/master/assets/sprites/2.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/pokemon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokemon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pokemon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 1,\n    \"name\": \"bulbasaur\",\n    \"description\": \"There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.\",\n    \"type\": [\"5fef5bad50fb2312385f110d\", \"5fef5c4e50fb2312385f110f\"],\n    \"hasGender\": true,\n    \"height\": 0.6,\n    \"weight\": 10.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/pokemon/5fef5bff50fb2312385f110e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokemon",
+								"5fef5bff50fb2312385f110e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pokemon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"squirtle\",\n    \"type\": \"water\",\n    \"gender\": \"female\",\n    \"height\": 0.6,\n    \"weight\": 10.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/pokemon/5fef5bff50fb2312385f110e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokemon",
+								"5fef5bff50fb2312385f110e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PokeType",
+			"item": [
+				{
+					"name": "poketypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/poketypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"poketypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "poketype",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"poison\",\n    \"color\": \"purple\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/poketype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"poketype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "poketype",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fire\",\n    \"color\": \"red\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/poketype/5f36fdb3fbfdce464cc51965",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"poketype",
+								"5f36fdb3fbfdce464cc51965"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "poketype",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"squirtle\",\n    \"type\": \"water\",\n    \"gender\": \"female\",\n    \"height\": 0.6,\n    \"weight\": 10.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/poketype/5f36fd9efbfdce464cc51964",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"poketype",
+								"5f36fd9efbfdce464cc51964"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pokedex",
+			"item": [
+				{
+					"name": "pokedex/{number}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 1,\n    \"name\": \"bulbasaur\",\n    \"description\": \"There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.\",\n    \"type\": [\"5fef5bad50fb2312385f110d\", \"5fef5c4e50fb2312385f110f\"],\n    \"hasGender\": true,\n    \"height\": 0.6,\n    \"weight\": 10.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/pokedex/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"pokedex",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001"
+				}
+			},
+			"response": []
+		}
+	]
+}
