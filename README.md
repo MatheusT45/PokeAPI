@@ -62,5 +62,6 @@ docker-compose up
 | Color  | `String`  | The pokemon type color in hexadecimal |
 
 ### TODOs
+- Sprite default URL
 - Chance to be shiny
 - Effective and weak type
