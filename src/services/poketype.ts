@@ -8,6 +8,7 @@ export class PokeTypeService {
         PokeType.find({}, (error: Error, poketype: MongooseDocument) => {
             if(error) {
                 res.send(error);
+                return;
             }
             res.json(poketype);
         });
@@ -18,6 +19,7 @@ export class PokeTypeService {
         newPokeType.save((error: Error, poketype: MongooseDocument) => {
             if (error) {
                 res.send(error);
+                return;
             }
             res.json(poketype);
         })
@@ -28,6 +30,7 @@ export class PokeTypeService {
         PokeType.findByIdAndDelete(poketypeID, (error: Error, deleted: any) => {
             if (error) {
                 res.send(error);
+                return;
             }
             const message = deleted ? 'Deleted successfully' : 'PokeType not found';
             res.send(message);
@@ -42,6 +45,7 @@ export class PokeTypeService {
             (error: Error, poketype: any) => {
                 if (error) {
                     res.send(error);
+                    return;
                 }
                 const message = poketype 
                     ? 'Updated successfully' 
