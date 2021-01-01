@@ -24,7 +24,6 @@ class App {
     }
 
     private setMongoConfig() {
-        mongoose.Promise = global.Promise;
         mongoose.connect(MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true
