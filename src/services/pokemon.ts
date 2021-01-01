@@ -20,24 +20,24 @@ export class PokeService {
         res.send(error);
         return;
       }
-      res.send(pokemon);
-    })
-  }
-
-  public addNewPokemon(req: Request, res: Response) {
-    const newPokemon = new Pokemon(req.body);
-    newPokemon.save(async (error: Error, pokemon: MongooseDocument) => {
-      if (error) {
-          res.send(error);
-          return;
-      }
       res.json(pokemon);
     })
   }
 
+  public async addNewPokemon(req: Request, res: Response) {
+    const newPokemon = new Pokemon(req.body);
+    try {
+      const pokemon = await newPokemon.save();
+      res.json(pokemon);
+    } catch (e) {
+      res.send(e);
+      return;
+    }
+  }
+
   public deletePokemon(req: Request, res: Response) {
     const pokemonId = req.params.id;
-    Pokemon.findByIdAndDelete(pokemonId, (error: Error, deleted: any) => {
+    Pokemon.findByIdAndDelete(pokemonId, null,  (error: Error ,deleted: any) => {
       if (error) {
         res.send(error);
         return;
@@ -47,21 +47,20 @@ export class PokeService {
     })
   }
 
-  public updatePokemon(req: Request, res: Response) {
+  public async updatePokemon(req: Request, res: Response) {
     const pokemonId = req.params.id;
-    Pokemon.findByIdAndUpdate(
-      pokemonId,
-      req.body,
-      (error: Error, pokemon: any) => {
-        if (error) {
-          res.send(error);
-          return;
-        }
-        const message = pokemon 
-          ? 'Updated successfully' 
-          : 'Pokemon not found';
-        res.send(message);
-      }
-    );
+    try{
+      const pokemon = await Pokemon.findByIdAndUpdate(
+        pokemonId,
+        req.body,
+      );
+      const message = pokemon 
+        ? 'Updated successfully' 
+        : 'Pokemon not found';
+      res.send(message);
+    } catch (e) {
+      res.send(e);
+      return;
+    }
   }
 }

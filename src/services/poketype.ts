@@ -14,44 +14,43 @@ export class PokeTypeService {
         });
     }
 
-    public addNewPokeType(req: Request, res: Response) {
+    public async addNewPokeType(req: Request, res: Response) {
         const newPokeType = new PokeType(req.body);
-        newPokeType.save((error: Error, poketype: MongooseDocument) => {
-            if (error) {
-                res.send(error);
-                return;
-            }
+        try {
+            const poketype = await newPokeType.save();
             res.json(poketype);
-        })
+          } catch (e) {
+            res.send(e);
+            return;
+          }
     }
 
     public deletePokeType(req: Request, res: Response) {
         const poketypeID = req.params.id;
-        PokeType.findByIdAndDelete(poketypeID, (error: Error, deleted: any) => {
+        PokeType.findByIdAndDelete(poketypeID, null, (error: Error, deleted: any) => {
             if (error) {
                 res.send(error);
                 return;
             }
-            const message = deleted ? 'Deleted successfully' : 'PokeType not found';
+            const message = deleted ? 'Deleted successfully' : 'Type not found';
             res.send(message);
         })
     }
 
-    public updatePokeType(req: Request, res: Response) {
+    public async updatePokeType(req: Request, res: Response) {
         const poketypeID = req.params.id;
-        PokeType.findByIdAndUpdate(
+        try{
+          const poketype = await PokeType.findByIdAndUpdate(
             poketypeID,
             req.body,
-            (error: Error, poketype: any) => {
-                if (error) {
-                    res.send(error);
-                    return;
-                }
-                const message = poketype 
-                    ? 'Updated successfully' 
-                    : 'PokeType not found';
-                res.send(message);
-            }
-        );
+          );
+          const message = poketype 
+            ? 'Updated successfully' 
+            : 'Type not found';
+          res.send(message);
+        } catch (e) {
+          res.send(e);
+          return;
+        }
     }
 }
