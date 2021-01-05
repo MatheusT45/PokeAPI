@@ -6,8 +6,8 @@ export class PokeService {
   public getAllPokemon(req: Request, res: Response) {
     Pokemon.find({}, async (error: Error, pokemon: MongooseDocument) => {
       if(error) {
-          res.send(error);
-          return;
+        res.send(error);
+        return;
       }
       res.json(pokemon);
     });
@@ -50,13 +50,11 @@ export class PokeService {
   public async updatePokemon(req: Request, res: Response) {
     const pokemonId = req.params.id;
     try{
-      const pokemon = await Pokemon.findByIdAndUpdate(
-        pokemonId,
-        req.body,
-      );
+      const pokemon = await Pokemon.findByIdAndUpdate(pokemonId, req.body);
       const message = pokemon 
         ? 'Updated successfully' 
         : 'Pokemon not found';
+
       res.send(message);
     } catch (e) {
       res.send(e);
