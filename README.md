@@ -65,3 +65,4 @@ docker-compose up
 - Sprite default URL
 - Chance to be shiny
 - Effective and weak type
+- Tests
